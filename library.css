@@ -1,0 +1,11 @@
+.library-table {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.library-table th,
+.library-table td {
+  padding: 0.5rem;
+}
