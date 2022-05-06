@@ -9,3 +9,15 @@
 .library-table td {
   padding: 0.5rem;
 }
+
+.library-table tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+form input {
+  margin-bottom: 1rem;
+}
+
+form button {
+  margin-top: 1rem;
+}

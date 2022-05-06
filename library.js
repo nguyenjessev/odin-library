@@ -25,3 +25,12 @@ function refreshBooks() {
     }
   }
 }
+
+const addBookButton = document.querySelector('.new-book-section button');
+addBookButton.addEventListener('click', () => {
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+  const read = document.querySelector('input[name="read"]:checked').value;
+  addBookToLibrary(title, author, pages, read);
+});
