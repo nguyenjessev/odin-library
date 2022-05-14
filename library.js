@@ -22,16 +22,28 @@ function refreshBooks() {
       tableData.textContent = book[prop];
       bookRow.appendChild(tableData);
     }
-    const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('type', 'button');
+
+    const readToggleButton = document.createElement('button');
+    readToggleButton.setAttribute('type', 'button');
+    readToggleButton.setAttribute('class', 'read-toggle-button');
+    readToggleButton.setAttribute('data-index', i);
+    readToggleButton.innerText = 'Toggle Read Status';
+    readToggleButton.addEventListener('click', () => {
+      myLibrary[i].read = myLibrary[i].read == 'Yes' ? 'No' : 'Yes';
+      refreshBooks();
+    });
+    const readToggleTd = document.createElement('td');
+    readToggleTd.appendChild(readToggleButton);
+    bookRow.appendChild(readToggleTd);
+
+    const deleteButton = document.createElement('span');
     deleteButton.setAttribute('class', 'delete-button');
     deleteButton.setAttribute('data-index', i);
-    deleteButton.innerText = 'Delete';
+    deleteButton.innerText = '❌';
     deleteButton.addEventListener('click', () => {
       myLibrary.splice(i, 1);
       refreshBooks();
-    })
-
+    });
     const deleteButtonTd = document.createElement('td');
     deleteButtonTd.appendChild(deleteButton);
     bookRow.appendChild(deleteButtonTd);

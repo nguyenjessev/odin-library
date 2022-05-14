@@ -8,6 +8,7 @@
 .library-table th,
 .library-table td {
   padding: 0.5rem;
+  text-align: center;
 }
 
 .library-table tbody tr:nth-child(odd) {
@@ -20,4 +21,8 @@ form input {
 
 form button {
   margin-top: 1rem;
+}
+
+.delete-button {
+  cursor: pointer;
 }
